@@ -1,14 +1,17 @@
 -------------------------------------------------------------------------------------------------------------------------------------------------------
+24. MongoDB Public Exposure and Docker Environment Configuration
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Date: 01/10/26
+
+MongoDB was publicly exposed through port 27017 because the Docker container published the database port directly on the host. Removed the host port mapping and attached MongoDB to a private Docker bridge network used by the backend services. The backend now accesses MongoDB internally through the Docker network, while port 27017 is no longer exposed to external traffic.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 23. Puppeteer Chrome Launch Failure in Docker Container
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 Date: 15/07/26
 
 A Node.js application using Puppeteer failed to generate PDFs inside a Docker container with the following error:
-Error: Could not find Chrome 
-
-The application used a multi-stage Docker build. Even if Puppeteer downloaded Chrome during the build stage, the browser cache was not copied into the final production image.
-
-Installed Alpine Chromium in the production image and configured Puppeteer to use it explicitly.
+Error: Could not find Chrome The application used a multi-stage Docker build. Even if Puppeteer downloaded Chrome during the build stage, the browser cache was not copied into the final production image. Installed Alpine Chromium in the production image and configured Puppeteer to use it explicitly.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 22. Developer pushed .env in the github repo accidentally
