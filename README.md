@@ -1,9 +1,9 @@
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-24. MongoDB Public Exposure and Docker Environment Configuration
+25. Kubernetes Secret .env Mount Failure
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-Date: 01/10/26
+Date: 07/10/26
 
-MongoDB was publicly exposed through port 27017 because the Docker container published the database port directly on the host. Removed the host port mapping and attached MongoDB to a private Docker bridge network used by the backend services. The backend now accesses MongoDB internally through the Docker network, while port 27017 is no longer exposed to external traffic.
+Kubernetes pods were failing to start because the Secret was created using --from-env-file, which stored each environment variable as a separate Secret key while the Deployment expected a .env key through subPath. Recreated the Secret using --from-file=.env=.env so the complete environment file is stored under the .env key. 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 23. Puppeteer Chrome Launch Failure in Docker Container
