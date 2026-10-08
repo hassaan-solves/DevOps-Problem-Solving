@@ -1,4 +1,10 @@
 -------------------------------------------------------------------------------------------------------------------------------------------------------
+26. Security Incident Investigation and Firewall Hardening
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Date: 08/10/26
+Investigated a reported security alert by reviewing server logs, authentication activity, network connections, and security configurations. No unauthorized access was identified. Blocked the reported source IP at the server firewall and verified the rule was active.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 25. Kubernetes Secret .env Mount Failure
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 Date: 07/10/26
