@@ -1,7 +1,15 @@
 -------------------------------------------------------------------------------------------------------------------------------------------------------
+27. Nginx API Routing Misconfiguration
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Date: 12/10/26
+
+Identified a URI forwarding issue in Nginx where the trailing slash in proxy_pass stripped the /api/ prefix, causing API requests to return frontend HTML. Corrected the proxy configuration to preserve the request URI and ensure proper routing to FastAPI endpoints.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 26. Security Incident Investigation and Firewall Hardening
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 Date: 08/10/26
+
 Investigated a reported security alert by reviewing server logs, authentication activity, network connections, and security configurations. No unauthorized access was identified. Blocked the reported source IP at the server firewall and verified the rule was active.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
