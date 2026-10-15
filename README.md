@@ -1,4 +1,11 @@
 -------------------------------------------------------------------------------------------------------------------------------------------------------
+28. Environment Variable Update Limitations
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Date: 15/10/26
+
+Identified a critical operational difference when updating variables via -v (Volume Mount) versus --env-file. While a standard docker restart is sufficient for volume-mounted variables because it forces the application runtime to re-read the active file on disk, docker restart fails to update variables injected via --env-file. This occurs because Docker freezes --env-file values into the container metadata at creation. Established that modifying variables via the --env-file method strictly requires a container recreation sequence (docker stop -> docker rm -> docker run) to force Docker to ingest the updated file.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 27. Nginx API Routing Issue
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 Date: 12/10/26
