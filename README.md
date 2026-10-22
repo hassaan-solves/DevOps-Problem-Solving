@@ -1,4 +1,12 @@
 -----------------------------------------------------------------------------------------------------------------------------
+29. Production Server Time Synchronization Issue
+-----------------------------------------------------------------------------------------------------------------------------
+
+Date: 22/10/26
+
+The development team identified application functionality issues caused by the server clock running approximately two minutes behind. Investigation revealed that system time synchronization was failing due to blocked outbound NTP traffic. Allowed outbound UDP port 123 in the security group and restarted systemd-timesyncd. Verified successful synchronization using timedatectl and cross-checked the server time against the actual time.
+
+-----------------------------------------------------------------------------------------------------------------------------
 28. Containerized Environment Variable Sync Issue
 -----------------------------------------------------------------------------------------------------------------------------
 Date: 15/10/26
