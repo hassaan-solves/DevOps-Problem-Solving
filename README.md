@@ -1,4 +1,12 @@
 -----------------------------------------------------------------------------------------------------------------------------
+30. MongoDB Atlas Tier Upgrade and Container Recovery
+-----------------------------------------------------------------------------------------------------------------------------
+
+Date: 26/10/26
+
+The existing application containers were experiencing performance issues and becoming unresponsive. Investigation and troubleshooting were carried out, including upgrading the MongoDB Atlas tier to improve database resource availability. The affected containers were restarted, which restored normal functionality. Application responsiveness was verified after the recovery.
+
+-----------------------------------------------------------------------------------------------------------------------------
 29. Production Server Time Synchronization Issue
 -----------------------------------------------------------------------------------------------------------------------------
 
